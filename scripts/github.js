@@ -11,7 +11,7 @@ module.exports = function(robot) {
   robot.respond(/prs/i, function(response) {
     hq.github.pullRequests('is:open').then(function(data) {
       var prs = data.items.map(function(item) {
-        return "<" + item.url + "|" + item.title ">";
+        return "<" + item.url + "|" + item.title + ">";
       });
       response.send(prs.join("\n"));
     });
