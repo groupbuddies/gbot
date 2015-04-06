@@ -11,7 +11,10 @@ module.exports = function(robot) {
   robot.respond(/prs/i, function(response) {
     hq.github.pullRequests('is:open').then(function(data) {
       var prs = data.items.map(function(item) {
-        return "<" + item.url + "|" + item.title + ">";
+        var repoName = item.html_url.match(/github.com\/(.*)\/pull/)[1];
+
+        return "[" + repoName + "] " + item.title + "\n\n" +
+              item.url;
       });
       response.send(prs.join("\n"));
     });
