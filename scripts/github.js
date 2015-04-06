@@ -1,3 +1,6 @@
+// Commands:
+//    hubot prs - List all open pull requests for GB
+
 require('dotenv').load();
 var Headquarters = require('headquarters-node');
 
