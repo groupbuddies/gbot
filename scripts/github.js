@@ -13,8 +13,8 @@ module.exports = function(robot) {
       var prs = data.items.map(function(item) {
         var repoName = item.html_url.match(/github.com\/(.*)\/pull/)[1];
 
-        return "[" + repoName + "] " + item.title + "\n\n" +
-              item.url;
+        return "[" + repoName + "] " + item.title + "\n" +
+              item.url + "\n";
       });
       response.send(prs.join("\n"));
     });
