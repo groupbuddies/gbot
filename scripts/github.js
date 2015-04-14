@@ -22,4 +22,4 @@ module.exports = function(robot) {
       response.send(prs.join("\n"));
     });
   });
-}
+};
