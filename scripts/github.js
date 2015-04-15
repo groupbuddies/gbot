@@ -17,7 +17,7 @@ module.exports = function(robot) {
         var repoName = item.html_url.match(/github.com\/(.*)\/pull/)[1];
 
         return "[" + repoName + "] " + item.title + "\n" +
-              item.url + "\n";
+              item.html_url + "\n";
       });
       response.send(prs.join("\n"));
     });
