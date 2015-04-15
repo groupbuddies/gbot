@@ -45,13 +45,17 @@ var requestAccessToken = function(callback) {
 
 module.exports = function(robot) {
   robot.respond(/lunch/i, function(response) {
-    requestAccessToken(function(error) {
-      if (error)
-        return response.send(error);
+    try {
+      requestAccessToken(function(error) {
+        if (error)
+          return response.send(error);
 
-      requestTodayFeed(function(message) {
-        response.send(message);
+        requestTodayFeed(function(message) {
+          response.send(message);
+        });
       });
-    });
+    } catch (e) {
+      response.send(e.message);
+    }
   });
 };
