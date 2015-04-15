@@ -8,8 +8,11 @@ var toDateString = function(date) {
 
 var requestTodayFeed = function(callback) {
   FB.api('622844924478142/posts', { fields: ['full_picture', 'created_time'] }, function(res) {
-    if (!res || res.error)
-      return;
+    if (!res)
+      return callback('Error');
+
+    if (res.error)
+      return callback(res.error);
 
     var currentDate = new Date();
     var images = [];
@@ -29,8 +32,11 @@ var requestAccessToken = function(callback) {
     client_secret: process.env.FB_APP_SECRET,
     grant_type: 'client_credentials'
   }, function(res) {
-    if (!res || res.error)
-      return;
+    if (!res)
+      return callback('Error');
+
+    if (res.error)
+      return callback(res.error);
 
     FB.setAccessToken(res.access_token);
     callback();
@@ -39,7 +45,10 @@ var requestAccessToken = function(callback) {
 
 module.exports = function(robot) {
   robot.respond(/lunch/i, function(response) {
-    requestAccessToken(function() {
+    requestAccessToken(function(error) {
+      if (error)
+        return response.send(error);
+
       requestTodayFeed(function(message) {
         response.send(message);
       });
