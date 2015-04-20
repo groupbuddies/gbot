@@ -1,7 +1,6 @@
 // Commands:
 //    hubot prs - List all open pull requests for GB
 
-require('dotenv').load();
 var hq = require('../lib/headquarters');
 
 
