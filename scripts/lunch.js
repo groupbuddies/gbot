@@ -22,7 +22,11 @@ var requestTodayFeed = function(callback) {
         images.push(post.full_picture);
     });
 
-    callback(images.join(' '));
+    if (images.length > 0) {
+      callback(images.join(' '));
+    } else {
+      callback("Sushi&Grill a favar. Parece que vai ser bocas hoje");
+    }
   });
 };
 
