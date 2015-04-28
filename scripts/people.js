@@ -32,12 +32,16 @@ function parsedMembers(members) {
     return member.name + " - " +
       member.email + ", " +
       (member.phone_no || "[no phone number]" + ", " +
-      "@" + member.twitter_handle);
+      member.twitter_handle);
   }).join("\n");
 }
 
 function parsedSingleMember(member) {
-  return Object.keys(member).map(function(attr) {
-    return attr + ": " + member[attr];
+  return Object.keys(member).filter(function(attr) {
+    return member[attr];
+  }).map(function(attr) {
+    if (member[attr]) {
+      return attr + ": " + member[attr];
+    }
   }).join("\n");
 }
