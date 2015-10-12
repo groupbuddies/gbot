@@ -1,4 +1,4 @@
-set :repo_url, 'git@github.com:groupbuddies/gbot.git'
+set :repo_url, 'git@github.com:subvisual/gbot.git'
 set :application, 'gbot'
 set :stage, :production
 set :branch, (ENV['DEPLOY_BRANCH'] || :master)

@@ -2,7 +2,7 @@
   "name": "gbot",
   "version": "0.0.0",
   "private": true,
-  "author": "mpalhas@groupbuddies.com",
+  "author": "miguel@subvisual.com",
   "description": "Group Buddies bot",
   "dependencies": {
     "dotenv": "^1.1.0",

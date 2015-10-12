@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/groupbuddies/capistrano-foreman.git
+  remote: git://github.com/subvisual/capistrano-foreman.git
   revision: 724e157c664674637797a066a2ddd7176ce1eb21
   branch: master
   specs:
@@ -43,3 +43,6 @@ DEPENDENCIES
   capistrano-foreman!
   capistrano-rvm
   foreman
+
+BUNDLED WITH
+   1.10.3
