@@ -48,7 +48,7 @@ var requestAccessToken = function(callback) {
 };
 
 module.exports = function(robot) {
-  robot.respond(/lunch/i, function(response) {
+  robot.respond(/^lunch$/i, function(response) {
     try {
       requestAccessToken(function(error) {
         if (error)

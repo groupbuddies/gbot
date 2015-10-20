@@ -21,7 +21,8 @@
     "hubot-scripts": "^2.5.16",
     "hubot-shipit": "^0.1.2",
     "hubot-slack": "slackhq/hubot-slack#ea562aeadab3f9f58e8db6ee5e86a4a41509db6a",
-    "hubot-youtube": "^0.1.2"
+    "hubot-youtube": "^0.1.2",
+    "hubot-lunchpoll": "azevedo-252/hubot-lunchpoll"
   },
   "engines": {
     "node": "0.10.x"
