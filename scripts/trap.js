@@ -9,7 +9,9 @@ module.exports = function(robot) {
     to = msg.match[1] || '';
     hq.member.all().then(function(members) {
       var index = Math.floor(Math.random() * members.length);
-      msg.send(members[index].name + ", It's a trap!! " + to);
+      var name = members[index].name;
+      var slack = members[index].slack_handler;
+      msg.send(members[index].name + ", It's a trap!! " + to + "\n" + members[index].slack_handler);
     });
   });
 };
